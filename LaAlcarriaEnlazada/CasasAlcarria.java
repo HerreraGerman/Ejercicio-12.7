@@ -7,7 +7,7 @@ public class CasasAlcarria{
     public static void main(String[] args) {
         BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
         String opcion = "";
-        TablaDispersa tabla = new TablaDispersa();
+        TablaDispersaEnlazada tabla = new TablaDispersaEnlazada();
         CasaRural casa;
 
         System.out.print("\033[H\033[2J");

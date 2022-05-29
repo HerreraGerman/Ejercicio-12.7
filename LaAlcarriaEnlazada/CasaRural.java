@@ -37,7 +37,7 @@ new InputStreamReader(System.in));
     }
 }
 
-public String elCodigo(){
+public String getCodigo(){
     return codigo;
 }
 
