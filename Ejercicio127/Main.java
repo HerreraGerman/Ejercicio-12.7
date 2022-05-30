@@ -28,17 +28,17 @@ public class Main{
                     break;
                 case "2":
                     System.out.print("\033[H\033[2J");
-                    System.out.print("Ingrese la casa que desea buscar: ");
+                    System.out.print("Ingrese el socio que desea buscar: ");
                     try {
                         TipoSocio buscado = tabla.buscar(entrada.readLine());
                         buscado.muestra();
                     } catch (Exception e) {
-                        System.out.println("La casa no existe, ingrese nuevamente o presione 0 para salir");
+                        System.out.println("El socio no existe, ingrese nuevamente o presione 0 para salir");
                     }
                     break;
                 case "3":
                     System.out.print("\033[H\033[2J");
-                    System.out.print("Ingrese el código de la casa que desea eliminar: ");
+                    System.out.print("Ingrese el código del socio que desea eliminar: ");
                     try {
                         tabla.eliminar(entrada.readLine());
                     } catch (IOException e) {
