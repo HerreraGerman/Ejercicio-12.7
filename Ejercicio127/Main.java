@@ -1,14 +1,12 @@
 package Ejercicio127;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
-        BufferedReader entrada = new BufferedReader(new InputStreamReader(System.in));
-        String opcion = "";
+        Scanner entrada = new Scanner(System.in);
+        int opcion, codigo, edad, dia, mes, año;
+        String nombre;
         TablaDispersaEnlazada tabla = new TablaDispersaEnlazada();
-        TipoSocio socio;
 
         System.out.print("\033[H\033[2J");
         System.out.println("Bienvenido");
@@ -23,15 +21,16 @@ public class Main{
             switch (opcion) {
                 case "1":
                     System.out.print("\033[H\033[2J");
-                    socio = new TipoSocio();
+                    TipoSocio socio = new TipoSocio();
                     tabla.insertar(socio);
                     break;
                 case "2":
                     System.out.print("\033[H\033[2J");
                     System.out.print("Ingrese el socio que desea buscar: ");
                     try {
-                        TipoSocio buscado = tabla.buscar(entrada.readLine());
-                        buscado.muestra();
+                        codigo = entrada.nextInt();
+                        sc.nextLine();
+                        tabla.eliminar(codigo);
                     } catch (Exception e) {
                         System.out.println("El socio no existe, ingrese nuevamente o presione 0 para salir");
                     }
@@ -40,7 +39,9 @@ public class Main{
                     System.out.print("\033[H\033[2J");
                     System.out.print("Ingrese el código del socio que desea eliminar: ");
                     try {
-                        tabla.eliminar(entrada.readLine());
+                        codigo = entrada.nextInt();
+                        sc.nextLine();
+                        tabla.buscar(codigo).getSocio().mostrar();
                     } catch (IOException e) {
                         System.out.println("Código incorrecto, ingrese nuevamente o presione 0 para salir");
                     }
