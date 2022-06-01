@@ -34,7 +34,7 @@ public class TablaDispersaEnlazada{
     }
 
     boolean conforme(TipoSocio a){
-        return conforme(a);
+        return true;
     }
 
     public void eliminar(int codigo){
